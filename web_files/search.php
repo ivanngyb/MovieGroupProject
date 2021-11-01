@@ -6,6 +6,8 @@
         ID: 30039802
         Date: 8/9/2021
         Task: Project
+
+        Change all the comments.
 */
 ?>
 <!DOCTYPE html>
