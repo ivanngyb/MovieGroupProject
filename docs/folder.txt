@@ -1,0 +1,1 @@
+This folder is for our documents, including test documents and project documents.
