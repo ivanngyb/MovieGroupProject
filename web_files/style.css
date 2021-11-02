@@ -58,6 +58,11 @@ table {
 td a {
     display: block;
 }
+@media only screen and (max-width: 600px) {
+    .large-only {
+        display: none;
+    }    
+}
 
 
 /* details page formatting */
