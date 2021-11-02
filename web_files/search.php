@@ -11,9 +11,13 @@
 */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
         <title>
             Search movies
         </title>
@@ -22,15 +26,22 @@
         <?php
         require "nav.php";
         ?>
-        <header>
+
+        <header class="container-fluid text-center mt-3">
             <h1>Search movies</h1>
         </header>
+
         <main>
+        <div class="container-fluid p-3">
+        <!-- <div class="col"> -->
             <form action="search_results.php">
                 <?php
                 require "search_script.php";
                 ?>
             </form>
+            <!-- </div> -->
+        </div>
         </main>        
+
     </body>
 </html>

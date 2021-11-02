@@ -8,9 +8,13 @@
         Task: Project
 */
 ?>
-        <nav>
-            <ul>
-                <li><a href="top_ten.php">Top Ten List</a></li>
-                <li><a href="search.php">New Search</a></li>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="top_ten.php">Top Ten List</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="search.php">New Search</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>

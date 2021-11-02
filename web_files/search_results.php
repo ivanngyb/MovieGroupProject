@@ -28,7 +28,7 @@
                 <tr>
                     <th>Title</th>
                     <th>Rating</th>
-                    <th>Year</th>
+                    <th class='large-only'>Year</th>
                     <th>Status</th>
                 </tr>
                 <?php

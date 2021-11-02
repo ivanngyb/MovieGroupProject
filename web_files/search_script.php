@@ -16,61 +16,86 @@ require "connection_script.php";
 
 
 ?>
-                <label>Title</label>
-                <input type="text" autofocus name="title" id="title"><br>
-                <label>Genre</label>
-                <select name="genre" id="genre">
-                    <option value="">(Any)</option>
+            <div class="row mb-3">
+                <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Title</label>
+                <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                    <input type="text" class="form-control" autofocus name="title" id="title">
+                </div>
+            </div>
 
-                        <?php
-                        $stmt = $conn->prepare(
-                            '
-                            SELECT DISTINCT
+                <div class="row mb-3">
+                    <label  class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Genre</label>
+                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                        <select name="genre" class="form-select" id="genre">
+                            <option value="">(Any)</option>
+                            
+                            <?php
+                            $stmt = $conn->prepare(
+                                '
+                                SELECT DISTINCT
                                 genre
-                            FROM
+                                FROM
                                 `dvd`
-                            WHERE
+                                WHERE
                                 1
-                            ORDER BY genre;
-                            '
-                        );
-                        $stmt->execute();
-                        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-                            $genre = $row["genre"];
-                            echo "<option>$genre</option>";
-                        }
-                        ?>
+                                ORDER BY genre;
+                                '
+                            );
+                            $stmt->execute();
+                            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+                                $genre = $row["genre"];
+                                echo "<option>$genre</option>";
+                            }
+                            ?>
 
-                </select><br/>
-                <label>Rating</label>
-                <select name="rating" id="rating">
-                    <option value="">(Any)</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Rating</label>
+                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                        <select name="rating" class="form-select" id="rating">
+                            <option value="">(Any)</option>
 
-                    <?php
-                    $stmt = $conn->prepare(
-                        '
-                        SELECT DISTINCT
-                            rating
-                        FROM
-                            `dvd`
-                        WHERE
-                            1
-                        ORDER BY rating;
-                        '
-                    );
-                    $stmt->execute();
-                    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-                        $rating = $row["rating"];
-                        echo "<option>$rating</option>";
-                    }
+                            <?php
+                            $stmt = $conn->prepare(
+                                '
+                                SELECT DISTINCT
+                                    rating
+                                FROM
+                                    `dvd`
+                                WHERE
+                                    1
+                                ORDER BY rating;
+                                '
+                            );
+                            $stmt->execute();
+                            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+                                $rating = $row["rating"];
+                                echo "<option>$rating</option>";
+                            }
 
-                    $conn = null;
+                            $conn = null;
 
-                    ?>
+                            ?>
 
-                </select><br/>
-                <label>Year</label>
-                <input type="number" min="1800" max="2099"
-                    name="movie_year" id="movie_year"><br>
-                <label></label>
-                <input class="button" type="submit" value="Search"> 
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Year</label>
+                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                        <input type="number" class="form-control" min="1800" max="2099"
+                            name="movie_year" id="movie_year">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label"></label>
+                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                        <input class="button"  class="form-control" type="submit" value="Search"> 
+                    </div>
+                </div>
+                

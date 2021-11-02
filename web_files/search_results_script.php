@@ -104,7 +104,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
         <tr>
             <td><a href='movie_details.php?id=$id'>$title</a></td>
             <td>$rating</td>
-            <td>$movie_year</td>
+            <td class='large-only'>$movie_year</td>
             <td>$status</td>
         </tr>
     ";
