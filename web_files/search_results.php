@@ -8,22 +8,26 @@
         Task: Project
 */
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
+<!-- <!DOCTYPE html>
+<html> -->
+    <!-- <head>
         <link rel="stylesheet" href="style.css">
         <title>
             Search results
         </title>
     </head>
     <body>
-        <?php
-        require "nav.php";
-        ?>
+       
         <header>
+            
+        </header> -->
+        <div class="container-fluid text-center mt-3">
             <h1>Search results</h1>
-        </header>
-        <main>
+        </div>
+        <div class="row mb-3">
+        <div class="col-2 col-sm-2 col-md-3 col-lg-4">
+</div>
+        <div class="col-10 col-sm-10 col-md-7 col-lg-4">
             <table>
                 <tr>
                     <th>Title</th>
@@ -34,7 +38,8 @@
                 <?php
                 require "search_results_script.php";
                 ?>
-            </table>
-        </main>        
-    </body>
-</html>
+            </table> 
+        </div>
+        </div>  
+    <!-- </body> -->
+<!-- </html> -->

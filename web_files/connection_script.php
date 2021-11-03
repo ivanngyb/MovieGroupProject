@@ -20,7 +20,7 @@
 $username = 'root';
 $password = '';
 $conn = new PDO(
-   'mysql:host=localhost;dbname=ica_movies_db', $username, $password
+   'mysql:host=localhost;port=8306;dbname=ica_movies_db', $username, $password
 );
 
 /* lab pc*/

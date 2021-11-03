@@ -34,13 +34,14 @@
         <main>
         <div class="container-fluid p-3">
         <!-- <div class="col"> -->
-            <form action="search_results.php">
+            <form action="">
                 <?php
                 require "search_script.php";
                 ?>
             </form>
             <!-- </div> -->
         </div>
+            <?php require "search_results.php"?>
         </main>        
 
     </body>
