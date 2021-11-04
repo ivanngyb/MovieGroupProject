@@ -16,19 +16,19 @@ require "connection_script.php";
 
 
 ?>
+        <!-- Title Field -->
             <div class="row mb-3">
-                <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Title</label>
-                <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Title</label>
+                <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                     <input type="text" class="form-control" autofocus name="title" id="title">
                 </div>
             </div>
-
+            <!-- Genre Selector -->
                 <div class="row mb-3">
-                    <label  class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Genre</label>
-                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Genre</label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                         <select name="genre" class="form-select" id="genre">
                             <option value="">(Any)</option>
-                            
                             <?php
                             $stmt = $conn->prepare(
                                 '
@@ -47,17 +47,15 @@ require "connection_script.php";
                                 echo "<option>$genre</option>";
                             }
                             ?>
-
                         </select>
                     </div>
                 </div>
-            
+            <!-- Rating Selector -->
                 <div class="row mb-3">
-                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Rating</label>
-                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Rating</label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                         <select name="rating" class="form-select" id="rating">
                             <option value="">(Any)</option>
-
                             <?php
                             $stmt = $conn->prepare(
                                 '
@@ -79,23 +77,29 @@ require "connection_script.php";
                             $conn = null;
 
                             ?>
-
                         </select>
                     </div>
                 </div>
-
+            <!-- Year Field -->
                 <div class="row mb-3">
-                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label">Year</label>
-                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Year</label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                         <input type="number" class="form-control" min="1800" max="2099"
                             name="movie_year" id="movie_year">
                     </div>
                 </div>
-
+            <!-- Year Field -->
                 <div class="row mb-3">
-                    <label class="col-2 col-sm-2 col-md-3 col-lg-4 col-form-label"></label>
-                    <div class="col-10 col-sm-10 col-md-7 col-lg-4">
-                        <input class="button"  class="form-control" type="submit" value="Search"> 
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                        <input class="button"  class="form-control" name="submit" type="submit" value="Search"> 
                     </div>
                 </div>
+            <!-- If the search form was submitted include the results table. -->
+                <?php 
+                    if (isset($_POST['submit'])) {
+                        include 'search_results.php';
+                    }
+                ?>
+
                 

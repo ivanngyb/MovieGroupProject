@@ -43,6 +43,15 @@ $stmt->execute();
 
 $rank = 1;
 
+    echo "
+        <tr>
+            <th>Rank</th>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Year</th>
+            <th>Searches</th>
+        </tr>";
+
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     $id = $row["id"];
     $title = htmlspecialchars($row["title"]);

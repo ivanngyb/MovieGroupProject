@@ -9,8 +9,10 @@
 */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -22,21 +24,21 @@
         <?php
         require "nav.php";
         ?>
-        <header>
-            <h1>Top ten searched movies - number of searches</h1>
+        <header class="container-fluid text-center mt-3">
+            <h1>Top ten Most Searched Movies</h1>
         </header>
         <main>
             <div>
-                <img src="top_ten_image_script.php"/>
+                <img src="top_ten_image_script.php"  class="img-fluid">
             </div>
             <table>
-                <tr>
+                <!-- <tr>
                     <th>Rank</th>
                     <th>Title</th>
                     <th>Rating</th>
                     <th>Year</th>
                     <th>Searches</th>
-                </tr>
+                </tr> -->
                 <?php
                 require "top_ten_script.php";
                 ?>

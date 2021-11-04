@@ -28,13 +28,13 @@ require "connection_script.php";
 
 $sql_condition = '1';
 
-if (array_key_exists('title', $_GET) && array_key_exists('genre', $_GET) 
-    && array_key_exists('rating', $_GET) && array_key_exists('movie_year', $_GET)
+if (array_key_exists('title', $_POST) && array_key_exists('genre', $_POST) 
+    && array_key_exists('rating', $_POST) && array_key_exists('movie_year', $_POST)
 ) {
-    $title = $_GET["title"];
-    $genre = $_GET["genre"];
-    $rating = $_GET["rating"];
-    $movie_year = $_GET["movie_year"];
+    $title = $_POST["title"];
+    $genre = $_POST["genre"];
+    $rating = $_POST["rating"];
+    $movie_year = $_POST["movie_year"];
 
     $title_present = (strlen($title) > 0);
     $genre_present = (strlen($genre) > 0);
