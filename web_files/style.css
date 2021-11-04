@@ -51,8 +51,8 @@ td {
     padding: 4px;
 }
 table {
-    border: 2px solid black;
-    border-collapse: collapse;
+    /* border: 2px solid black; */
+    /* border-collapse: collapse; */
 }
 /* Make the whole table cell with a link in it clickable */
 td a {

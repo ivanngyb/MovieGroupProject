@@ -28,21 +28,20 @@
             <h1>Top ten Most Searched Movies</h1>
         </header>
         <main>
-            <div>
+
+            <div class="text-center">
                 <img src="top_ten_image_script.php"  class="img-fluid">
             </div>
-            <table>
-                <!-- <tr>
-                    <th>Rank</th>
-                    <th>Title</th>
-                    <th>Rating</th>
-                    <th>Year</th>
-                    <th>Searches</th>
-                </tr> -->
-                <?php
-                require "top_ten_script.php";
-                ?>
-            </table>
+            <!-- Top 10 Table -->
+            <div class="row justify-content-center g-0">
+                <div class="col-12 col-sm-12 col-md-10 col-xl-6 pe-0">
+                    <table class="table">
+                        <?php
+                        require "top_ten_script.php";
+                        ?>
+                    </table>
+                </div>
+            </div>
         </main>        
     </body>
 </html>

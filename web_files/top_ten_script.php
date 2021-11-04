@@ -49,7 +49,7 @@ $rank = 1;
             <th>Title</th>
             <th>Rating</th>
             <th>Year</th>
-            <th>Searches</th>
+            <th class='large-only'>Searches</th>
         </tr>";
 
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
@@ -65,7 +65,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             <td><a href='movie_details.php?id=$id'>$title</a></td>
             <td>$rating</td>
             <td>$movie_year</td>
-            <td>$search_count</td>
+            <td class='large-only'>$search_count</td>
         </tr>
     ";
     $rank++;
