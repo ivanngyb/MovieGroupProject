@@ -32,17 +32,11 @@
         </header>
 
         <main>
-        <div class="container-fluid p-3">
-        <!-- <div class="col"> -->
-            <form method="post" action="">
+            <form class="m-0 row" method="post" action="">
                 <?php
                 require "search_script.php";
                 ?>
             </form>
-            <!-- </div> -->
-        </div>
-          
         </main>        
-
     </body>
 </html>
