@@ -1,14 +1,19 @@
 <?php
 /*
-        search_script - contents of the search form,
-        generated from the database
-
-        Name: Caspian Maclean
-        ID: 30039802
-        Date: 8/9/2021
-        Task: Project
-
+        search_script - contents of the search form, 
+        generated from the database.
         Menu for genre and rating need to come from the database.
+
+        RAD - 
+        Team Name: ICA Designs
+        Team Members:
+            Ivan Ng
+            Caspian Maclean
+            Andrew Williamson
+        Date: 05/11/2021
+        Sprint: One
+        Task: Make all the pages responsive.
+        
 */
 
 require "connection_script.php";

@@ -2,20 +2,29 @@
 /*
         top_ten - web page with list of top ten most searched movies
 
-        Name: Caspian Maclean
-        ID: 30039802
-        Date: 8/9/2021
-        Task: Project
+        RAD - 
+        Team Name: ICA Designs
+        Team Members:
+            Ivan Ng
+            Caspian Maclean
+            Andrew Williamson
+        Date: 05/11/2021
+        Sprint: One
+        Task: Make all the pages responsive.
 */
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+
+        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Regular CSS -->
+        <link rel="stylesheet" href="style.css">
+        
         <title>
             Top ten searched movies
         </title>
@@ -43,6 +52,8 @@
                     </table>
                 </div>
             </div>
-        </main>        
+        </main>
+        <!-- Optional JavaScript : Just in case we need it -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

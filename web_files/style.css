@@ -1,36 +1,27 @@
 /*
- * 		Name: Caspian Maclean
- *		ID: 30039802
- *      Date: 8/9/2021
- *      Task: Project
- */
+
+    RAD - 
+    Team Name: ICA Designs
+    Team Members:
+        Ivan Ng
+        Caspian Maclean
+        Andrew Williamson
+    Date: 05/11/2021
+    Sprint: One
+    Task: Make all the pages responsive.
+*/
 
 body {
     background-color: rgb(224, 224, 224);
 }
-main {
-    /* margin-left: 160px; */
-}
-header {
-    /* margin-top: 60px; */
-}
-
 
 /* Navigation pane formatting */
 nav {
     background-color: lightgray;
 }
-nav li a {
-    /* display: block; */
-}
 nav ul {
 	list-style-type: none;
-    /* width: 140px; */
     padding: 0, 0, 0, 0;
-    /* margin-top: 0; */
-    /* position: fixed; */
-    background-color: lightgray;
-    /* height: 100%; */
 }
 
 
@@ -50,10 +41,6 @@ td {
     border-collapse: collapse;
     padding: 4px;
 }
-table {
-    /* border: 2px solid black; */
-    /* border-collapse: collapse; */
-}
 /* Make the whole table cell with a link in it clickable */
 td a {
     display: block;
@@ -65,26 +52,16 @@ td a {
 }
 
 /* details page formatting */
-.details-list {
-    column-count: 2;
-}
-.detail-halfway {
-    break-after: column;
-}
 .details-list label {
     width: 100px;
-    display: inline-block;
     text-align: right;
     padding-right: 8px;
-
 }
 
 /* form and input formatting */
 form label {
-    /* width: 100px; */
     display: inline-block;
     text-align: right;
-    /* padding-right: 8px; */
 }
 
 input, select {

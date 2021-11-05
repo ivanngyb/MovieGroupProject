@@ -2,21 +2,15 @@
 /*
         search_results_script - generate search results table entries
 
-        Name: Caspian Maclean
-        ID: 30039802
-        Date: 8/9/2021
-        Task: Project
-
-
-        Generate search results table entries, corresponding to this header:
-
-                <tr>
-                    <th>Title</th>
-                    <th>Rating</th>
-                    <th>Year</th>
-                    <th>Status</th>
-                </tr>
-
+        RAD - 
+        Team Name: ICA Designs
+        Team Members:
+            Ivan Ng
+            Caspian Maclean
+            Andrew Williamson
+        Date: 05/11/2021
+        Sprint: One
+        Task: Make all the pages responsive.
 */
 
 require "connection_script.php";

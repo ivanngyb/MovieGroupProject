@@ -2,10 +2,15 @@
 /*
         nav - the navigation pane shared by all the web pages
 
-        Name: Caspian Maclean
-        ID: 30039802
-        Date: 8/9/2021
-        Task: Project
+        RAD - 
+        Team Name: ICA Designs
+        Team Members:
+            Ivan Ng
+            Caspian Maclean
+            Andrew Williamson
+        Date: 05/11/2021
+        Sprint: One
+        Task: Make all the pages responsive.
 */
 ?>
     <nav class="navbar navbar-expand-sm">

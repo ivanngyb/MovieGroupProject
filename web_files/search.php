@@ -2,22 +2,29 @@
 /*
         search - web page with form for user to enter a search
         
-        Name: Caspian Maclean
-        ID: 30039802
-        Date: 8/9/2021
-        Task: Project
-
-        Change all the comments.
+        RAD - 
+        Team Name: ICA Designs
+        Team Members:
+            Ivan Ng
+            Caspian Maclean
+            Andrew Williamson
+        Date: 05/11/2021
+        Sprint: One
+        Task: Make all the pages responsive.
 */
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+
+        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Regular CSS -->
+        <link rel="stylesheet" href="style.css">
+        
         <title>
             Search movies
         </title>
@@ -26,17 +33,18 @@
         <?php
         require "nav.php";
         ?>
-
         <header class="container-fluid text-center mt-3">
             <h1>Search movies</h1>
         </header>
-
         <main>
+            <!-- The Search Form and Table -->
             <form class="m-0 row" method="post" action="">
                 <?php
                 require "search_script.php";
                 ?>
             </form>
-        </main>        
+        </main>
+        <!-- Optional JavaScript : Just in case we need it -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
