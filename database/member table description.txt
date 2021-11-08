@@ -1,0 +1,17 @@
+table name:
+member
+
+field names:
+id int(11)
+first_name varchar(24)
+last_name varchar(40)
+email varchar(32)
+newsletter_requested tinyint(1)
+newsflash_requested tinyint(1)
+
+regarding type values for newsletter_requested and newsflash_requested:
+
+https://www.mysqltutorial.org/mysql-boolean/
+MySQL does not have built-in Boolean type. However, it uses TINYINT(1) instead. To make it more convenient, MySQL provides BOOLEAN or BOOL as the synonym of TINYINT(1).
+
+In MySQL, zero is considered as false, and non-zero value is considered as true. To use Boolean literals, you use the constants TRUE and FALSE that evaluate to 1 and 0 respectively.
