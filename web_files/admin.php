@@ -56,6 +56,17 @@
                     </div>
                 </div>
             </form>
+            <div class="container-fluid text-center mt-3">
+                <h1>Member list</h1>
+            </div>
+            <form class="m-0 row" method="post" action="admin.php">
+            <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                        <input class="button"  class="form-control" name="show" type="submit" value="Show members"> 
+                    </div>
+                </div>
+            </form>
         </main>
     </body>
 </html>
