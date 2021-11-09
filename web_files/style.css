@@ -12,103 +12,132 @@
 */
 
 body {
-    background-color: rgb(224, 224, 224);
+  background-color: rgb(255, 255, 255);
 }
 
 /* Navigation pane formatting */
+
 nav {
-    background-color: lightgray;
-}
-nav ul {
-	list-style-type: none;
-    padding: 0, 0, 0, 0;
+  background-color: rgb(255, 255, 255);
+  border-bottom: #000000;
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0, 0, 0, 0;
+}
 
 /* Table formatting */
+
 tr:nth-child(even) {
-    background-color: lightgray;
+  background-color: lightgray;
 }
+
 th {
-    border: 2px solid black;
-    border-collapse: collapse;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    
+  border: 2px solid black;
+  border-collapse: collapse;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
+
 td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 4px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 4px;
 }
+
 /* Make the whole table cell with a link in it clickable */
+
 td a {
-    display: block;
+  display: block;
 }
+
 @media only screen and (max-width: 600px) {
-    .large-only {
-        display: none;
-    }    
+  .large-only {
+    display: none;
+  }
 }
 
 /* details page formatting */
+
 .details-list label {
-    width: 100px;
-    text-align: right;
-    padding-right: 8px;
+  width: 100px;
+  text-align: right;
+  padding-right: 8px;
 }
 
 /* form and input formatting */
+
 form label {
-    display: inline-block;
-    text-align: right;
+  display: inline-block;
+  text-align: right;
 }
 
 input, select {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .button {
-    margin-top: 10px;
-    margin-right: 40px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.navbar {
+  border-bottom:0.5px solid rgb(204, 204, 204);
 }
 
 .navbar .navbar-nav .nav-link {
-    color: #7400B8;
-    font-size: 1.1em;
-    position: relative;
-  }
-  .navbar .navbar-nav .nav-link:hover {
-    color: #7400B8;
-  }
-  .navbar .navbar-nav .nav-link::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #7400B8;
-    color: transparent;
-    width: 0%;
-    content: '.';
-    height: 3px;
-  }
-  .navbar .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
-  
-  .navbar .navbar-nav .nav-link {
-    transition: all 0.5s;
-  }
+  color: #5E60CE;
+  font-size: 1.1em;
+  position: relative;
+}
 
-  @media only screen and (min-width: 960px) {
-    .navbar .navbar-nav .nav-link {
-      padding: 1em 0.7em;
-    }
-    .navbar {
-      padding: 0;
-    }
-    .navbar .navbar-brand {
-      padding: 0 0.7em;
-    }
+.navbar .navbar-nav .nav-link:hover {
+  color: #5E60CE;
+}
+
+.navbar .navbar-nav .nav-link .active {
+  color: #FFFFFF;
+}
+
+.navbar .navbar-nav .nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #5E60CE;
+  color: transparent;
+  width: 0%;
+  content: '.';
+  height: 3px;
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar .navbar-nav .nav-link {
+  transition: all 0.5s;
+}
+
+@media only screen and (min-width: 960px) {
+  .navbar .navbar-nav .nav-link {
+    padding: 1em 0.7em;
   }
+  .navbar {
+    padding: 0;
+  }
+  .navbar .navbar-brand {
+    padding: 0 0.7em;
+  }
+}
+
+.hero-image {
+  background-image: url("./resources/bg-image.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
