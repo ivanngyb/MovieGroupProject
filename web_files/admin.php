@@ -49,6 +49,12 @@
                         <input type="text" class="form-control" autofocus name="email" id="email">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                        <input class="button"  class="form-control" name="delete" type="submit" value="Delete member"> 
+                    </div>
+                </div>
             </form>
         </main>
     </body>
