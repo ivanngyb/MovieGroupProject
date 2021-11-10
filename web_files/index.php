@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row row align-items-center">
           <div class="col-lg-5 offset-lg-1 order-lg-1">
-            <img src="./resources/undraw_lost_online_re_upmy.svg" class="img-fluid" alt="Movies">
+            <img src="./resources/undraw_online_video_re_fou2.svg" class="img-fluid" alt="Movies">
           </div>
           <div class="col-lg-6">
             <h1 class="mt-3">Acme Entertainment</h1>
