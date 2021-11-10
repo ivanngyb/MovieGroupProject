@@ -67,6 +67,21 @@
                     </div>
                 </div>
             </form>
+            <div class="row justify-content-center g-0">
+            <div class="col-12 col-sm-12 col-md-10 col-xl-6">
+                <table class="table">
+                    <tr>
+                        <th>Full name</th>
+                        <th>E-mail address</th>
+                    </tr>
+                    <tr>
+                        <td>Caspian</td>
+                        <td>your.name.here@example.com</td>
+                    </tr>
+
+                </table> 
+            </div>
+        </div>  
         </main>
     </body>
 </html>
