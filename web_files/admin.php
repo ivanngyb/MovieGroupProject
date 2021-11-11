@@ -42,7 +42,7 @@
                 <h2>Unsubscribe</h2>
             </div>
             <!-- The Unsubscribe User Form -->
-            <form class="m-0 row" method="post" action="delete">
+            <form class="m-0 row" method="get" action="admin.php">
                 <?php
 
                 ?>
@@ -55,24 +55,36 @@
                 <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
-                        <input class="button"  class="form-control" name="unsubscribe" type="submit" value="Unsubscribe member"> 
+                        <button class="button"  class="form-control" name="submit" type="submit" value="unsubscribe"> 
+                          Unsubscribe member
+                        </button>
+                        <?php
+                          if (isset($_GET['submit']) && $_GET['submit'] == "unsubscribe" ) {
+                            echo "<br/> Unsubscribed ";
+                            $email = htmlspecialchars($_GET['email']);
+
+                            echo "$email<br/>";
+                          }
+                        ?>
                     </div>
                 </div>
             </form>
             <div class="container-fluid text-center mt-3">
                 <h2>Member list</h2>
             </div>
-            <form class="m-0 row" method="post" action="admin.php">
+            <form class="m-0 row" method="get" action="admin.php">
             <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
-                        <input class="button"  class="form-control" name="show" type="submit" value="Show members"> 
+                        <button class="button"  class="form-control" name="show" type="submit" value="show">
+                          Show members
+                        </button>
                     </div>
                 </div>
             </form>
             <!-- If the show members form was submitted include the members table. -->
             <?php 
-                if (isset($_POST['show'])) {
+                if (isset($_GET['show'])) {
                     echo '
                     <div class="row justify-content-center g-0">
                         <div class="col-12 col-sm-12 col-md-10 col-xl-6">
@@ -84,13 +96,9 @@
                                     <th>Subscribed to newsflashes</th>
                                     <th>Unsubscribe</th>
                                 </tr>
-                                <tr>
-                                    <td>Caspian</td>
-                                    <td>your.name.here@example.com</td>
-                                    <td>Yes</td>
-                                    <td>No</td>
-                                    <td>Unsubscribe</td>
-                                </tr>
+                    ';
+                    require 'admin_member_list_script.php';
+                    echo '
                             </table> 
                         </div>
                     </div>  
