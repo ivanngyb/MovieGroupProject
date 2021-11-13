@@ -38,7 +38,7 @@
         </header>
         <main>
             <!-- The Search Form and Table -->
-            <form class="m-0 row" method="post" action="">
+            <form class="m-0 row" method="post" action="#results">
                 <?php
                 require "search_script.php";
                 ?>

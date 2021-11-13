@@ -22,7 +22,8 @@ require "connection_script.php";
 
 $sql_condition = '1';
 
-if (array_key_exists('title', $_POST) && array_key_exists('genre', $_POST) 
+if (
+    array_key_exists('title', $_POST) && array_key_exists('genre', $_POST)
     && array_key_exists('rating', $_POST) && array_key_exists('movie_year', $_POST)
 ) {
     $title = $_POST["title"];
@@ -60,7 +61,7 @@ if ($movie_year_present) {
 $stmt = $conn->prepare(
     '
     SELECT
-        id, title, rating, movie_year, status
+        id, title, rating, movie_year, status, studio, versions, recommended_retail_price, aspect
     FROM
         `dvd`
     WHERE
@@ -87,27 +88,64 @@ $stmt->execute();
 
 $count = 0;
 
+echo "<div class='accordion' id='accordionMovie'>";
+
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     $id = $row["id"];
     $title = htmlspecialchars($row["title"]);
     $rating = $row["rating"];
     $movie_year = $row["movie_year"];
     $status = $row["status"];
+    $studio = $row["studio"];
+    $version = $row["versions"];
+    $price = $row["recommended_retail_price"];
+    $ratio = $row["aspect"];
+    // echo "
+    //     <tr>
+    //         <td><a href='movie_details.php?id=$id'>$title</a></td>
+    //         <td>$rating</td>
+    //         <td class='large-only'>$movie_year</td>
+    //         <td>$status</td>
+    //     </tr>
+    // ";
+
 
     echo "
-        <tr>
-            <td><a href='movie_details.php?id=$id'>$title</a></td>
-            <td>$rating</td>
-            <td class='large-only'>$movie_year</td>
-            <td>$status</td>
-        </tr>
-    ";
+        <div class='accordion-item'>
+            <h2 class='accordion-header' id='heading$count'>
+                <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapse$count' aria-expanded='false' aria-controls='collapse$count'>
+                    $title
+                </button>
+            </h2>
+            <div id='collapse$count' class='accordion-collapse collapse' aria-labelledby='heading$count' data-bs-parent='#accordionMovie'>
+            <div class='accordion-body'>
+                <strong>$title</strong>
+                <div class='row'>
+                    <div class='col-sm'>
+                        <p>Studio: $studio</p>
+                        <p>Year: $movie_year</p>
+                        <p>Rated: $rating</p>
+                    </div>
+                    <div class='col-sm'>
+                        <p>Price: $price</p>
+                        <p>Version: $version</p>
+                        <p>Aspect Ratio: $ratio</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>";
+
+
 
     $count++;
 }
+
+echo "
+    </div>
+    ";
 
 if ($count == 0) {
     echo "No matching movies found<br/><br/>";
 }
 $conn = null;
-?>

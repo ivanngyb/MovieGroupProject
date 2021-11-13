@@ -26,22 +26,12 @@
         <header>
             
         </header> -->
-        <div class="container-fluid text-center mt-3">
+        <div class="container-fluid text-center mt-3" id="results">
             <h1>Search results</h1>
         </div>
         <div class="row justify-content-center g-0">
             <div class="col-12 col-sm-12 col-md-10 col-xl-6">
-                <table class="table">
-                    <tr>
-                        <th>Title</th>
-                        <th>Rating</th>
-                        <th class='large-only'>Year</th>
-                        <th>Status</th>
-                    </tr>
-                    <?php
-                    require "search_results_script.php";
-                    ?>
-                </table> 
+                <?php require "search_results_script.php";?>
             </div>
         </div>  
     <!-- </body> -->

@@ -52,7 +52,7 @@
           </div>
           <div class="col-lg-6">
             <h1 class="mt-3">Search through our database</h1>
-            <p class="lead text-secondary my-5">Go through our database to see our wide range of movies available!</p>
+            <p class="lead text-secondary my-5">Check out our wide range of movies available!</p>
             <a href="search.php" class="btn btn-outline-secondary btn-lg border">Search</a>
           </div>
         </div>
