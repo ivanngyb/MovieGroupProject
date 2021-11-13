@@ -34,7 +34,7 @@
         require "nav.php";
         ?>
         <header class="container-fluid text-center mt-3">
-            <h1>Top ten Most Searched Movies</h1>
+            <h1>Top ten most searched movies</h1>
         </header>
         <main>
             <!-- Top 10 Graph -->

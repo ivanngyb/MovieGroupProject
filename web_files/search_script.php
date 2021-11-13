@@ -97,7 +97,7 @@ require "connection_script.php";
                 <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
-                        <input class="button"  class="form-control" name="submit" type="submit" value="Search"> 
+                        <input class="btn btn-outline-secondary btn-lg border"  class="form-control" name="submit" type="submit" value="Search"> 
                     </div>
                 </div>
             <!-- If the search form was submitted include the results table. -->
