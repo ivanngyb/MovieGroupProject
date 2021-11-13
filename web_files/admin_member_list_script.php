@@ -14,6 +14,7 @@
 
 require "connection_script.php";
 
+// Get data for all members in the table
 $stmt = $conn->prepare(
     '
 SELECT
@@ -27,6 +28,7 @@ FROM
 $stmt->execute();
 
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+    // Set strings of member data to be used in the table html
     $id = $row["id"];
     $first_name = htmlspecialchars($row["first_name"]);
     $last_name = htmlspecialchars($row["last_name"]);
@@ -45,6 +47,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
         $newsflash_requested_display = "yes";
     }
 
+    // Table data html, including one cell that hass an unsubscribe link
     echo "
         <tr>
             <td>$first_name $last_name</td>
