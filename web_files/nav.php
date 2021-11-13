@@ -23,9 +23,9 @@
             </ul>
         </div>
     </nav> -->
-<nav class="navbar navbar-expand-sm bg-white navbar-light">
+<nav class="navbar navbar-expand-sm bg-white navbar-light shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./resources/logo_transparent.svg" width="290" height="62.5" class="d-inline-block align-top" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="./resources/logo_transparent.svg" width="290" height="62.5" class="d-inline-block align-top img-fluid" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,9 +41,10 @@
                     <a class="nav-link" href="top_ten.php">Top 10</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="register.php">Register</a>
                 </li>
             </ul>
         </div>
     </div>
+    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
 </nav>
