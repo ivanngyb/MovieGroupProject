@@ -60,11 +60,6 @@
                         </button>
                         <?php
                           if (isset($_GET['submit']) && $_GET['submit'] == "unsubscribe" ) {
-                            echo "<br/> Unsubscribed ";
-                            $email = htmlspecialchars($_GET['email']);
-
-                            echo "$email<br/>";
-                            echo "script output: ";
                             require "admin_member_unsubscribe_script.php";
                           }
                         ?>

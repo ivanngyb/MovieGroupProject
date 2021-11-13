@@ -12,45 +12,42 @@
         Sprint: Two
 */
 
-require "connection_script.php";
 
-$stmt = $conn->prepare(
-    '
-SELECT
-    first_name, last_name, email, newsletter_requested, newsflash_requested
-FROM
-    `member`
-WHERE
-    email="caspianmaclean@example.com"
-;
-    '
-);
 
-$stmt->execute();
 
-foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-    $first_name = htmlspecialchars($row["first_name"]);
-    $last_name = htmlspecialchars($row["last_name"]);
-    $email = htmlspecialchars($row["email"]);
-    $url_email = urlencode($row["email"]);
-    $newsletter_requested_code = $row["newsletter_requested"];
-    if ($newsletter_requested_code == 0) {
-        $newsletter_requested_display = "no";
+if (! array_key_exists('email', $_GET)) {
+    echo "<br/>missing e-mail address<br/>";
+} else {
+    require "connection_script.php";
+
+    echo "<br/> Unsubscribing ";                            
+    $email = htmlspecialchars($_GET['email']);
+    echo "email address: $email<br/>";
+
+    $raw_email = $_GET['email'];
+
+    $stmt = $conn->prepare(
+        '
+    UPDATE `member`
+    SET
+        newsletter_requested = 0, newsflash_requested = 0        
+    WHERE
+        email=:email
+    ;
+        '
+    );
+    
+    $stmt->bindParam(':email', $raw_email);
+    
+    $stmt->execute();
+
+    if ($stmt->rowCount() == 0) {
+        echo "<br/>Unsuccessful: Not found in member database<br/>";
     } else {
-        $newsletter_requested_display = "yes";
+        echo "<br/>Member unsubscribed<br/>";
     }
-    $newsflash_requested_code = $row["newsflash_requested"];
-    if ($newsflash_requested_code == 0) {
-        $newsflash_requested_display = "no";
-    } else {
-        $newsflash_requested_display = "yes";
-    }
-
-    echo "
-        *** $first_name $last_name / $email / 
-        $newsletter_requested_display (letter) / $newsflash_requested_display (newsflash) ***
-    ";
-    $conn = null;
 }
+
+
 ?>
  
