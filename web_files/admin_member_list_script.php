@@ -54,7 +54,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             <td><a href='admin.php?id=$id&submit=unsubscribe&email=$url_email'>Unsubscribe member</a></td>
         </tr>
     ";
-    $conn = null;
 }
+$conn = null;
 ?>
  
