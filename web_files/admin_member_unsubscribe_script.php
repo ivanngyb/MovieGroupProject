@@ -12,9 +12,10 @@
         Sprint: Two
 */
 
-
-
-
+// Make sure an e-mail address was passed in.
+// Do not check for validity, as we'll want to be able to remove/unsubscribe any
+// addresses that are in the database, valid or not. The program will still warn
+// if the address was not in the database.
 if (! array_key_exists('email', $_GET)) {
     echo "<br/>missing e-mail address<br/>";
 } else {
@@ -24,6 +25,7 @@ if (! array_key_exists('email', $_GET)) {
     $email = htmlspecialchars($_GET['email']);
     echo "email address: $email<br/>";
 
+    // Need a non-html copy of the e-mail address, for the SQL query
     $raw_email = $_GET['email'];
 
     $stmt = $conn->prepare(
@@ -41,11 +43,14 @@ if (! array_key_exists('email', $_GET)) {
     
     $stmt->execute();
 
+    // If no rows were changed, either the e-mail address wasn't in the database
+    // or they were already unsubscribed, so show a warning message.
     if ($stmt->rowCount() == 0) {
-        echo "<br/>Unsuccessful: Not found in member database<br/>";
+        echo "<br/>Unsuccessful: Not found subscribed in member database<br/>";
     } else {
         echo "<br/>Member unsubscribed<br/>";
     }
+    $conn = null;
 }
 
 
