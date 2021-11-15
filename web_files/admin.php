@@ -11,6 +11,20 @@
         Date: 08/11/2021
         Sprint: Two
 */
+
+include "connection_script.php";
+$conn = null;
+
+if (!isset($_SESSION['username'])) {
+    // header("Location: index.php");
+    echo "<br/>not logged in<br/>";
+}
+else {
+    echo "user name: " . $_SESSION['username'];
+}
+if (!isset($_SESSION['admin'])) {
+    echo "<br/>not logged in<br/>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +52,10 @@
             <h1>Admin page</h1>
         </header>
         <main>
+
             <div class="container-fluid text-center mt-3">
                 <h2>Create personnel account</h2>
-            </div>
-
-
-            <!-- The Create personnel account form -->
+            </div>            <!-- The Create personnel account form -->
             <form class="m-0 row" method="get" action="admin.php">
                 <div class="row mb-3">
                 <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Username</label>
@@ -140,6 +152,20 @@
                     ';
                 }
             ?>
+            <div class="container-fluid text-center mt-3">
+                <h2>Log out</h2>
+            </div>
+            <!-- Admin log out button -->
+            <form class="m-0 row" method="get" action="logout.php">
+                <div class="row mb-3">
+                    <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                        <button class="button"  class="form-control" name="submit" type="submit" value="submit">
+                          Logout
+                        </button>
+                    </div>
+                </div>
+            </form>
 
             </form>
         </main>
