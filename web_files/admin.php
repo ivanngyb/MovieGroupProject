@@ -39,13 +39,51 @@
         </header>
         <main>
             <div class="container-fluid text-center mt-3">
-                <h2>Unsubscribe</h2>
+                <h2>Create personnel account</h2>
+            </div>
+
+
+            <!-- The Create personnel account form -->
+            <form class="m-0 row" method="get" action="admin.php">
+                <div class="row mb-3">
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Username</label>
+                <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                    <input type="text" class="form-control" autofocus name="username" id="username">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Password</label>
+                <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                    <input type="text" class="form-control" autofocus name="password" id="password">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label" for="create_admin">
+                    Give this new account admin privileges
+                </label>
+                <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                    <input type="checkbox" class="form-check-input" id="create_admin" name="create_admin" value="yes">
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
+                <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                    <button class="button"  class="form-control" name="submit" type="submit" value="add_personnel"> 
+                        Add personnel member
+                    </button>
+                    <?php
+                        if (isset($_GET['submit']) && $_GET['submit'] == "add_personnel" ) {
+                        require "admin_add_personnel_script.php";
+                        }
+                    ?>
+                </div>
+            </div>
+            <div class="container-fluid text-center mt-3">
+                <h2>Unsubscribe member</h2>
             </div>
             <!-- The Unsubscribe User Form -->
             <form class="m-0 row" method="get" action="admin.php">
-                <?php
-
-                ?>
                 <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">E-mail</label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
@@ -70,7 +108,7 @@
                 <h2>Member list</h2>
             </div>
             <form class="m-0 row" method="get" action="admin.php">
-            <div class="row mb-3">
+                <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                         <button class="button"  class="form-control" name="show" type="submit" value="show">
@@ -101,7 +139,9 @@
                     </div>  
                     ';
                 }
-                ?>
+            ?>
+
+            </form>
         </main>
     </body>
 </html>
