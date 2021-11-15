@@ -10,15 +10,12 @@
  */
 
 /* web server connection */
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 $conn;
 try {
-    $username = 'root';
-    $password = '';
+    $username = 'adminer';
+    $password = 'P@ssw0rd';
     $conn = new PDO(
-        'mysql:host=localhost;port=8306;dbname=ica_movies_db',
+        'mysql:host=localhost;dbname=ica_movies_db',
         $username,
         $password,
         array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING)
