@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:8306
--- Generation Time: Nov 15, 2021 at 05:51 AM
+-- Generation Time: Nov 15, 2021 at 06:01 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -2377,6 +2377,19 @@ INSERT INTO `member` (`id`, `first_name`, `last_name`, `email`, `newsletter_requ
 (1, 'Caspian', 'Maclean', 'caspianmaclean@example.com', 0, 1),
 (2, 'Andrew', 'Williamson', 'aw@example.com', 1, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personnel`
+--
+
+CREATE TABLE `personnel` (
+  `id` int(11) NOT NULL,
+  `username` varchar(24) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `is_admin` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -2394,6 +2407,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `personnel`
+--
+ALTER TABLE `personnel`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -2402,6 +2421,12 @@ ALTER TABLE `member`
 --
 ALTER TABLE `member`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `personnel`
+--
+ALTER TABLE `personnel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
