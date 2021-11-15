@@ -61,7 +61,7 @@ if ($movie_year_present) {
 $stmt = $conn->prepare(
     '
     SELECT
-        id, title, rating, movie_year, status, studio, versions, recommended_retail_price, aspect
+        id, title, rating, movie_year, status, studio, versions, recommended_retail_price, aspect,genre
     FROM
         `dvd`
     WHERE
@@ -100,6 +100,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     $version = $row["versions"];
     $price = $row["recommended_retail_price"];
     $ratio = $row["aspect"];
+	$genre = $row["genre"];
     // echo "
     //     <tr>
     //         <td><a href='movie_details.php?id=$id'>$title</a></td>
@@ -122,7 +123,8 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
                 <strong>$title</strong>
                 <div class='row'>
                     <div class='col-sm'>
-                        <p>Studio: $studio</p>
+                    	<p>Studio: $studio</p>
+                        <p>Genre: $genre</p>
                         <p>Year: $movie_year</p>
                         <p>Rated: $rating</p>
                     </div>
