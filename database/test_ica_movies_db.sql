@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:8306
--- Generation Time: Nov 15, 2021 at 06:01 AM
+-- Generation Time: Nov 15, 2021 at 06:18 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -2391,6 +2391,13 @@ CREATE TABLE `personnel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `personnel`
+--
+
+INSERT INTO `personnel` (`id`, `username`, `password`, `is_admin`) VALUES
+(1, 'admin', 'password1', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -2426,7 +2433,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `personnel`
 --
 ALTER TABLE `personnel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
