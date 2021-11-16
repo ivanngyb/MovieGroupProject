@@ -1,7 +1,7 @@
 <?php
 /*
         top_ten_image_script - generates the a png chart of the top
-        ten most searched movies
+        ten most highly rated movies
 
         RAD - 
         Team Name: ICA Designs
@@ -19,12 +19,12 @@ require "connection_script.php";
 $stmt = $conn->prepare(
     '
 SELECT
-    title, search_count
+    title, average_star_rating
 FROM
     `dvd`
 WHERE
     1
-ORDER BY search_count DESC
+ORDER BY average_star_rating DESC
 LIMIT 10;
     '
 );
@@ -36,23 +36,23 @@ $count = 0;
 
 $max_results = 10;
 
-$search_counts = array_fill(0, $max_results, 0);
+$average_star_ratings = array_fill(0, $max_results, 0);
 $titles = array_fill(0, $max_results, "");
 $ranks = array_fill(0, $max_results, 0);
 
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-    $search_count = $row["search_count"];
+    $average_star_rating = $row["average_star_rating"];
 
     $titles[$count] = $row["title"];
-    $search_counts[$count] = $search_count;
+    $average_star_ratings[$count] = $average_star_rating;
     $ranks[$count] = $rank;
 
     if ($count == 0) {
-        $min = $search_count;
-        $max = $search_count;
+        $min = $average_star_rating;
+        $max = $average_star_rating;
     } else {
-        $min = min($min, $search_count);
-        $max = max($max, $search_count);
+        $min = min($min, $average_star_rating);
+        $max = max($max, $average_star_rating);
     }
 
     $rank++;
@@ -87,9 +87,14 @@ $bar_colour = imagecolorallocate($image, 0, 0, 128);
 for ($i = 0; $i < $count; $i++) {
     $width = $max_width;
 
-    $width = $min_width + $bar_scale * ($search_counts[$i] - $min);
+    $width = $min_width + $bar_scale * ($average_star_ratings[$i] - $min);
 
-    $info = "" . $search_counts[$i] . " - " . $titles[$i];
+    
+    if (empty($average_star_ratings[$i])) {
+        $info = "no ratings yet" . " - " . $titles[$i];
+    } else {
+        $info = "" . $average_star_ratings[$i] . " - " . $titles[$i];
+    }
 
 
     $y1 = 40+30*$i;

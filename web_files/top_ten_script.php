@@ -34,12 +34,12 @@ require "connection_script.php";
 $stmt = $conn->prepare(
     '
 SELECT
-    id, title, rating, movie_year, search_count
+    id, title, rating, movie_year, search_count, average_star_rating
 FROM
     `dvd`
 WHERE
     1
-ORDER BY search_count DESC
+ORDER BY average_star_rating DESC
 LIMIT 10;
     '
 );
@@ -54,6 +54,7 @@ $rank = 1;
             <th>Title</th>
             <th>Rating</th>
             <th>Year</th>
+            <th>Stars</th>
             <th class='large-only'>Searches</th>
         </tr>";
 
@@ -62,6 +63,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     $title = htmlspecialchars($row["title"]);
     $rating = $row["rating"];
     $movie_year = $row["movie_year"];
+    $average_star_rating = $row["average_star_rating"];
     $search_count = $row["search_count"];
 
     echo "
@@ -70,6 +72,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             <td><a href='movie_details.php?id=$id'>$title</a></td>
             <td>$rating</td>
             <td>$movie_year</td>
+            <td>$average_star_rating</td>
             <td class='large-only'>$search_count</td>
         </tr>
     ";
