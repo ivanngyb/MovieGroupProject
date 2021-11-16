@@ -25,3 +25,5 @@ is_admin tinyint(1) - true or false.
 additional columns for table: dvd
 number_of_star_ratings int(9)
 total_stars int(10)
+average_star_rating decimal (2,1) (2 digits, 1 after decimal place, the other before. e.g. 3.1)
+Defaults to null when no ratings have been made

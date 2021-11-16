@@ -20,12 +20,17 @@ if (! array_key_exists('stars', $_GET) || !array_key_exists('id', $_GET)) {
         '
     UPDATE `dvd`
     SET
-        number_of_star_ratings = number_of_star_ratings + 1, total_stars = total_stars + :stars_to_add
+        number_of_star_ratings = number_of_star_ratings + 1,
+        total_stars = total_stars + :stars_to_add,
+        average_star_rating = (total_stars + :stars_to_add) / (number_of_star_ratings + 1)
     WHERE
         id=:id
     ;
         '
     );
+
+//        average_star_rating = (number_of_star_ratings + 1) / (total_stars + :stars_to_add)
+
 
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':stars_to_add', $stars_to_add);
