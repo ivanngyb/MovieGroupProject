@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `dvd`
 --
-
+DROP TABLE IF EXISTS `dvd`;
 CREATE TABLE `dvd` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -2359,7 +2359,7 @@ INSERT INTO `dvd` (`id`, `title`, `studio`, `status`, `sound`, `versions`, `reco
 --
 -- Table structure for table `member`
 --
-
+DROP TABLE IF EXISTS `member`;
 CREATE TABLE `member` (
   `id` int(11) NOT NULL,
   `first_name` varchar(24) NOT NULL,
@@ -2372,7 +2372,6 @@ CREATE TABLE `member` (
 --
 -- Dumping data for table `member`
 --
-
 INSERT INTO `member` (`id`, `first_name`, `last_name`, `email`, `newsletter_requested`, `newsflash_requested`) VALUES
 (1, 'Caspian', 'Maclean', 'caspianmaclean@example.com', 0, 1),
 (2, 'Andrew', 'Williamson', 'aw@example.com', 1, 0);
@@ -2382,7 +2381,7 @@ INSERT INTO `member` (`id`, `first_name`, `last_name`, `email`, `newsletter_requ
 --
 -- Table structure for table `personnel`
 --
-
+DROP TABLE IF EXISTS `personnel`;
 CREATE TABLE `personnel` (
   `id` int(11) NOT NULL,
   `username` varchar(24) NOT NULL,
