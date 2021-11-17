@@ -10,9 +10,6 @@
  */
 
 /* web server connection */
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 $conn;
 try {
     $username = 'adminer';
