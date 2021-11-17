@@ -12,17 +12,8 @@
         Sprint: One
         Task: Make all the pages responsive.
 */
+
 ?>
-<!-- <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="top_ten.php">Top Ten List</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.php">New Search</a></li>
-            </ul>
-        </div>
-    </nav> -->
 <nav class="navbar navbar-expand-sm bg-white navbar-light shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><img src="./resources/logo_transparent.svg" width="290" height="62.5" class="d-inline-block align-top img-fluid" alt=""></a>
