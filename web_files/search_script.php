@@ -21,6 +21,7 @@ require "connection_script.php";
 
 
 ?>
+
         <!-- Title Field -->
             <div class="row mb-3">
                 <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">Title</label>

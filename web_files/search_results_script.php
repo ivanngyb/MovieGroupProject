@@ -134,6 +134,19 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
                         <p>Aspect Ratio: $ratio</p>
                     </div>
                 </div>
+                <div class='row'>
+                <form></form>
+                <form class='ratingForm' action='#' method='post' id='starRating'>
+                    <fieldset class='rating'>
+                    <input type='text' name='id' value='$id'>
+                    <input type='radio' id='star5$id' name='stars' value='5'/><label class ='full' for='star5$id' title='5 stars'></label>
+                    <input type='radio' id='star4$id' name='stars' value='4'/><label class ='full' for='star4$id' title='4 stars'></label>
+                    <input type='radio' id='star3$id' name='stars' value='3'/><label class ='full' for='star3$id' title='3 stars'></label>
+                    <input type='radio' id='star2$id' name='stars' value='2'/><label class ='full' for='star2$id' title='2 stars'></label>
+                    <input type='radio' id='star1$id' name='stars' value='1'/><label class ='full' for='star1$id' title='1 star'></label>
+                    </fieldset>
+                </form>
+                </div>
             </div>
             </div>
         </div>";
