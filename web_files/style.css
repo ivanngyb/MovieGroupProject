@@ -175,3 +175,8 @@ input, select {
 .hero-banner .btn:hover:before {
   width: 100%;
 }
+
+.chart-container {
+  width:  80%;
+  margin: 0 auto;
+}

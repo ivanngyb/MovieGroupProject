@@ -25,12 +25,10 @@
         <!-- Regular CSS -->
         <link rel="stylesheet" href="style.css">
         <!-- chart js -->
-        <script src="jquery-3.6.0.min.js"></script>
-        <script src="chart.bundle.js"></script>
-        <script src="movie_chart.js"></script>
+        
         
         <title>
-            Top ten searched movies
+            Top ten movies
         </title>
     </head>
     <body>
@@ -38,7 +36,7 @@
         require "nav.php";
         ?>
         <header class="container-fluid text-center mt-3">
-            <h1>Top ten most searched movies</h1>
+            <h1>Top ten movies</h1>
         </header>
         <main>
 
@@ -59,7 +57,9 @@
                 </div>
             </div>
         </main>
-        <!-- Optional JavaScript : Just in case we need it -->
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="chart.bundle.js"></script>
+        <script src="movie_chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

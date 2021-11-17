@@ -17,13 +17,23 @@ $(document).ready(function () {
                 labels: title,
                 datasets: [
                     {
-                        label: "Searched",
+                        label: "Stars",
                         fill: false,
-                        backgroundColor: chartColors.green,
-                        borderColor: chartColors.green,
-                        pointHoverBackgroundColor: chartColors.green,
-                        pointHoverBorderColor: chartColors.green,
-                        hoverBackgroundColor: chartColors.gold,
+                        backgroundColor: chartColors.deep_Purple,
+                        borderColor: chartColors.light_purple,
+                        pointHoverBackgroundColor: chartColors.deep_Purple,
+                        hoverBackgroundColor: [
+                            'rgb(255,215,0)',
+                            'rgb(233,232,225)',
+                            'rgb(205,127,50)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                            'rgb(123, 207, 233)',
+                        ],
                         borderWidth: 1,
                         data: average_star_rating
                     }
@@ -90,7 +100,9 @@ $(document).ready(function () {
             console.log(data);
         }
     });
+  
 });
+
 window.chartColors = {
     red: 'rgb(255, 99, 132)',
     orange: 'rgb(255, 159, 64)',
@@ -98,6 +110,15 @@ window.chartColors = {
     green: 'rgb(75, 192, 192)',
     blue: 'rgb(54, 162, 235)',
     purple: 'rgb(153, 102, 255)',
-    gold: 'rgb(248,193,28)',
+    deep_Purple: 'rgb(153, 102, 255)',
+    light_purple: 'rgb(94, 96, 206)',
+    gold: 'rgb(255,215,0)',
     grey: 'rgb(201, 203, 207)'
+};
+window.hoverColours = {
+    gold: 'rgb(255,215,0)',
+    silver: 'rgb(192,192,192)',
+    platinum: 'rgb(233,232,225)',
+    bronze: 'rgb(205,127,50)'
+
 };
