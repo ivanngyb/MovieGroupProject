@@ -3,14 +3,14 @@ $(document).ready(function () {
         url: "data.php",
         type: "POST",
         success: function (data) {
-            var search_count = [];
-            var title = [];
-            var count = 1;
+            var average_star_rating = [];
+            var title = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
+            // var count = 1;
             for (var i in data) {
-                search_count.push("" + data[i].search_count);
+                average_star_rating.push("" + data[i].average_star_rating);
                 // title.push(data[i].title);
-                var num = count++;
-                title.push(num);
+                // var num = count++;
+                // title.push(num);
             }
 
             var chartdata = {
@@ -25,7 +25,7 @@ $(document).ready(function () {
                         pointHoverBorderColor: chartColors.green,
                         hoverBackgroundColor: chartColors.gold,
                         borderWidth: 1,
-                        data: search_count
+                        data: average_star_rating
                     }
                 ]
             };
@@ -58,8 +58,8 @@ $(document).ready(function () {
                             ticks: { 
                                 fontSize: 16,
                                 fontColor: 'black',
-                                min: 49800,
-                                max: 50000,
+                                min: 0,
+                                max: 6,
                             },
                             scaleLabel: {
                                 display: true,

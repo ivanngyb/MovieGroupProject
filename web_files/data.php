@@ -24,16 +24,22 @@ header('Content-Type: application/json');
 
 // echo "connection script including";
 // The connection to the database.
-require_once 'connection_script.php';
+require 'connection_script.php';
 
 // echo "connection script included";
 
 // prepare the statement.
 $stmt = $conn->prepare(
-    "SELECT `title`, `search_count` 
+    // "SELECT `title`, `search_count` 
+    // FROM `dvd` 
+    // ORDER BY `search_count` 
+    // DESC 
+    // LIMIT 10;"
+    "SELECT `title`, `average_star_rating` 
     FROM `dvd` 
-    ORDER BY `search_count` 
-    DESC 
+    ORDER BY 
+    `average_star_rating` DESC,
+    `number_of_star_ratings` DESC
     LIMIT 10;"
 );
 // execute the prepared statement.
@@ -56,5 +62,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 // Close the connection.
 $conn = null;
 
+// echo $data;
 // echo the data out in a json format.
-echo json_encode($data);
+// echo json_encode($data);
+echo json_encode(array_values($data));
