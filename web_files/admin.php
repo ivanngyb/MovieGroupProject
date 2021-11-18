@@ -57,7 +57,7 @@ if (!isset($_SESSION['admin'])) {
             }
             else {
                 echo "logged in as: " . $_SESSION['username'];
-                if (!isset($_SESSION['admin'])) {
+                if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
                     echo " (personnel)<br/>";
                 } else {
                     echo " (admin)<br/>";
