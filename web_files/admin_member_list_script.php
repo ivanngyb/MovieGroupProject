@@ -13,6 +13,11 @@
 */
 
 require "connection_script.php";
+if (!isset($_SESSION['username'])) {
+    echo "Not allowed";
+    die;
+}
+
 
 // Get data for all members in the table
 $stmt = $conn->prepare(
