@@ -21,6 +21,11 @@ if (
 } else {
     require "connection_script.php";
 
+    if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
+        echo "Not allowed";
+        die;
+    }
+
     $html_username = htmlspecialchars($_GET['username']);
 
     // Need a non-html copy of the inputs, for the SQL query
