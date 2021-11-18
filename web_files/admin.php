@@ -17,13 +17,11 @@ $conn = null;
 
 if (!isset($_SESSION['username'])) {
     // header("Location: index.php");
-    echo "<br/>not logged in<br/>";
 }
 else {
-    echo "user name: " . $_SESSION['username'];
 }
 if (!isset($_SESSION['admin'])) {
-    echo "<br/>not logged in<br/>";
+    // Remove some parts of page
 }
 ?>
 <!DOCTYPE html>
@@ -51,6 +49,22 @@ if (!isset($_SESSION['admin'])) {
         <header class="container-fluid text-center mt-3">
             <h1>Admin page</h1>
         </header>
+        <?php
+
+            if (!isset($_SESSION['username'])) {
+                // header("Location: index.php");
+                echo "<br/>not logged in<br/>";
+            }
+            else {
+                echo "logged in user name: " . $_SESSION['username'];
+            }
+            if (!isset($_SESSION['admin'])) {
+                echo "<br/>admin not logged in<br/>";
+            } else {
+                echo "<br/>(is an admin)<br/>";
+            }
+        ?>
+        
         <main>
 
             <div class="container-fluid text-center mt-3">

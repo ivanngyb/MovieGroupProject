@@ -13,17 +13,28 @@
 // Do not check for validity, as we'll want to be able to remove/unsubscribe any
 // addresses that are in the database, valid or not. The program will still warn
 // if the address was not in the database.
-if (! array_key_exists('username', $_GET)) {
-    echo "<br/>missing username<br/>";
+if (
+        ! array_key_exists('username', $_GET) ||
+        ! array_key_exists('password', $_GET)
+    ) {
+    echo "<br/>missing parameter<br/>";
 } else {
     require "connection_script.php";
 
-    $username = htmlspecialchars($_GET['username']);
-    echo "username: $username<br/>";
+    $html_username = htmlspecialchars($_GET['username']);
+    echo "new username: $html_username<br/>";
 
-    // Need a non-html copy of the e-mail address, for the SQL query
+    // Need a non-html copy of the inputs, for the SQL query
     $raw_username = $_GET['username'];
+    $raw_password = $_GET['password'];
 
+    if (array_key_exists('create_admin', $_GET) && $_GET['create_admin'] == "yes") {
+        $create_admin_code = 1;
+    } else {
+        $create_admin_code = 0;
+    }
+    echo "create_admin_code: $create_admin_code<br/>";
+        
     $stmt = $conn->prepare(
         '
     INSERT INTO personnel
@@ -34,7 +45,7 @@ if (! array_key_exists('username', $_GET)) {
         '
     );
     
-    $stmt->bindParam(':email', $raw_email);
+    $stmt->bindParam(':username', $raw_username);
     
     $stmt->execute();
 
