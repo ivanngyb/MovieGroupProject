@@ -87,6 +87,13 @@ if (!isset($_SESSION['username'])) {
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <div class="col-2 col-sm-2 col-md-2 col-xl-3"></div>
+                    <div class="col-10 col-sm-10 col-md-9 col-xl-6">
+                    <span>Password needs to be at least 8 characters, including uppercase, lowercase, and numbers, or be a passphrase at least 16 characters long.
+                    </span>
+                    </div>
+                </div>
+                <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">
                     </label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
