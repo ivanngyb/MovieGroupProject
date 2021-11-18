@@ -133,10 +133,10 @@ if (!isset($_SESSION['admin'])) {
                     </div>
                 </div>
             </form>
-            <div class="container-fluid text-center mt-3">
+            <div class="container-fluid text-center mt-3" id="member_list">
                 <h2>Member list</h2>
             </div>
-            <form class="m-0 row" method="get" action="admin.php">
+            <form class="m-0 row" method="get" action="admin.php#member_list">
                 <div class="row mb-3">
                     <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label"></label>
                     <div class="col-10 col-sm-10 col-md-9 col-xl-6">
