@@ -49,21 +49,22 @@ if (!isset($_SESSION['admin'])) {
         <header class="container-fluid text-center mt-3">
             <h1>Admin page</h1>
         </header>
+        <div class = "text-center">
         <?php
-
             if (!isset($_SESSION['username'])) {
                 // header("Location: index.php");
                 echo "<br/>not logged in<br/>";
             }
             else {
-                echo "logged in user name: " . $_SESSION['username'];
-            }
-            if (!isset($_SESSION['admin'])) {
-                echo "<br/>admin not logged in<br/>";
-            } else {
-                echo "<br/>(is an admin)<br/>";
+                echo "logged in as: " . $_SESSION['username'];
+                if (!isset($_SESSION['admin'])) {
+                    echo " (personnel)<br/>";
+                } else {
+                    echo " (admin)<br/>";
+                }
             }
         ?>
+        </div>
         
         <main>
 
@@ -84,11 +85,13 @@ if (!isset($_SESSION['admin'])) {
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label" for="create_admin">
-                    Give this new account admin privileges
+                <label class="col-2 col-sm-2 col-md-2 col-xl-3 col-form-label">
                 </label>
                 <div class="col-10 col-sm-10 col-md-9 col-xl-6">
                     <input type="checkbox" class="form-check-input" id="create_admin" name="create_admin" value="yes">
+                    <label class="col-form-label" for="create_admin">
+                        Give this new account admin privileges
+                    </label>
                 </div>
 
             </div>
