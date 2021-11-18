@@ -59,7 +59,13 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             <td>$email</td>
             <td>$newsletter_requested_display</td>
             <td>$newsflash_requested_display</td>
+    ";
+    if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)) {
+        echo "
             <td><a href='admin.php?id=$id&submit=unsubscribe&email=$url_email'>Unsubscribe member</a></td>
+        ";
+    }
+    echo "
         </tr>
     ";
 }

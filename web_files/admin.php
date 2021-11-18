@@ -47,7 +47,7 @@ if (!isset($_SESSION['username'])) {
         <div class = "text-center">
         <?php
             if (!isset($_SESSION['username'])) {
-                // header("Location: index.php");
+                // shouldn't reach here due to header("Location: index.php");
                 echo "<br/>not logged in<br/>";
                 $non_admin_hidden = "hidden";
             }
@@ -152,18 +152,18 @@ if (!isset($_SESSION['username'])) {
             <!-- If the show members form was submitted include the members table. -->
             <?php 
                 if (isset($_GET['show'])) {
-                    echo '
-                    <div class="row justify-content-center g-0">
-                        <div class="col-12 col-sm-12 col-md-10 col-xl-6">
-                            <table class="table">
+                    echo "
+                    <div class='row justify-content-center g-0'>
+                        <div class='col-12 col-sm-12 col-md-10 col-xl-6'>
+                            <table class='table'>
                                 <tr>
                                     <th>Full name</th>
                                     <th>E-mail address</th>
                                     <th>Subscribed to newsletter</th>
                                     <th>Subscribed to newsflashes</th>
-                                    <th>Unsubscribe</th>
+                                    <th $non_admin_hidden>Unsubscribe</th>
                                 </tr>
-                    ';
+                    ";
                     require 'admin_member_list_script.php';
                     echo '
                             </table> 
