@@ -22,7 +22,6 @@ if (
     require "connection_script.php";
 
     $html_username = htmlspecialchars($_GET['username']);
-    echo "new username: $html_username<br/>";
 
     // Need a non-html copy of the inputs, for the SQL query
     $raw_username = $_GET['username'];
@@ -30,10 +29,11 @@ if (
 
     if (array_key_exists('create_admin', $_GET) && $_GET['create_admin'] == "yes") {
         $create_admin_code = 1;
+        $create_admin_message = "with admin access";
     } else {
         $create_admin_code = 0;
+        $create_admin_message = "without admin access";
     }
-    echo "create_admin_code: $create_admin_code<br/>";
         
     $stmt = $conn->prepare(
         '
@@ -51,9 +51,9 @@ if (
 
     // If no rows were changed, show a warning message.
     if ($stmt->rowCount() == 0) {
-        echo "<br/>Unsuccessful<br/>";
+        echo "<br/>Unsuccessful - account not added for $html_username<br/>";
     } else {
-        echo "<br/>Added<br/>";
+        echo "<br/>Added $html_username ($create_admin_message)<br/>";
     }
     $conn = null;
 }
