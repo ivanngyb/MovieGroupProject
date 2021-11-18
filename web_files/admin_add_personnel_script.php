@@ -38,14 +38,16 @@ if (
     $stmt = $conn->prepare(
         '
     INSERT INTO personnel
-        (username)
+        (username, password, is_admin)
     VALUES
-        (:username)
+        (:username, :password, :is_admin)
     ;
         '
     );
     
     $stmt->bindParam(':username', $raw_username);
+    $stmt->bindParam(':password', $raw_password);
+    $stmt->bindParam(':is_admin', $create_admin_code);
     
     $stmt->execute();
 
