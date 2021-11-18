@@ -21,6 +21,11 @@ if (! array_key_exists('email', $_GET)) {
 } else {
     require "connection_script.php";
 
+    if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
+        echo "Not allowed";
+        die;
+    }
+
     echo "<br/> Unsubscribing ";                            
     $email = htmlspecialchars($_GET['email']);
     echo "email address: $email<br/>";
