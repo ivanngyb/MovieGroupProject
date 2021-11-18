@@ -16,12 +16,7 @@ include "connection_script.php";
 $conn = null;
 
 if (!isset($_SESSION['username'])) {
-    // header("Location: index.php");
-}
-else {
-}
-if (!isset($_SESSION['admin'])) {
-    // Remove some parts of page
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
