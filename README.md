@@ -1,4 +1,4 @@
-A group project we are doing for TAFE.
+# A group project we are doing for TAFE.
 
 * sprint-1 branch is the one I (Caspian) was managing, incorporating the code from the others.
 * sprint-2 branch was managed by Andrew (including code I wrote) in his repository.
