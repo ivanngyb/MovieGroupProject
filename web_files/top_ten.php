@@ -24,9 +24,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Regular CSS -->
         <link rel="stylesheet" href="style.css">
+        <!-- chart js -->
+        
         
         <title>
-            Top ten searched movies
+            Top ten movies
         </title>
     </head>
     <body>
@@ -34,14 +36,16 @@
         require "nav.php";
         ?>
         <header class="container-fluid text-center mt-3">
-            <h1>Top ten most searched movies</h1>
+            <h1>Top ten movies</h1>
         </header>
         <main>
-            <!-- Top 10 Graph -->
-            <div class="text-center">
-                <img src="top_ten_image_script.php"  class="img-fluid">
-            </div>
 
+            <!-- The top 10 chart made with chart.js -->
+            <div class="chart-container" 
+            style="position: relative; height: 50vh;">   
+                <canvas id="myChart"></canvas>
+            </div>
+                  
             <!-- Top 10 Table -->
             <div class="row justify-content-center g-0">
                 <div class="col-12 col-sm-12 col-md-10 col-xl-6 pe-0">
@@ -53,7 +57,9 @@
                 </div>
             </div>
         </main>
-        <!-- Optional JavaScript : Just in case we need it -->
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="chart.bundle.js"></script>
+        <script src="movie_chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
