@@ -17,7 +17,7 @@ if ($curpage == 'admin.php' && !isset($_SESSION['username'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <h5 class="modal-title" id="loginModalLabel">Acme Personnel Login</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -27,19 +27,15 @@ if ($curpage == 'admin.php' && !isset($_SESSION['username'])) {
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" placeholder="Enter username" name="uname" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Enter last name" name="pword" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <button type="submit" class="btn btn-outline-secondary btn-lg border my-5">Login</button>
                 </form>
+                <small id="incorrect"></small>
             </div>
         </div>
     </div>

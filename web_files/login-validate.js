@@ -18,11 +18,11 @@
             if (data == 1) {
               window.location = "admin.php";
             } else {
-              form.closest('.modal-body').append(data);
+              $('#incorrect').text(data);
             }
           }
         })
-        form.classList.add('was-validated')
+        //form.classList.add('was-validated')
       }, false)
     })
 })()
