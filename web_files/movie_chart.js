@@ -1,107 +1,129 @@
-$(document).ready(function () {
-    $.ajax({
-        url: "data.php",
-        type: "POST",
-        success: function (data) {
-            var average_star_rating = [];
-            var title = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
-            // var count = 1;
-            for (var i in data) {
-                average_star_rating.push("" + data[i].average_star_rating);
-                // title.push(data[i].title);
-                // var num = count++;
-                // title.push(num);
-            }
+var variableName = variableName || null;
+if (!variableName) {
+    variableName = 1;
 
-            var chartdata = {
-                labels: title,
-                datasets: [
-                    {
-                        label: "Stars",
-                        fill: false,
-                        backgroundColor: chartColors.deep_Purple,
-                        borderColor: chartColors.light_purple,
-                        pointHoverBackgroundColor: chartColors.deep_Purple,
-                        hoverBackgroundColor: [
-                            'rgb(255,215,0)',
-                            'rgb(233,232,225)',
-                            'rgb(205,127,50)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                            'rgb(123, 207, 233)',
-                        ],
-                        borderWidth: 1,
-                        data: average_star_rating
-                    }
-                ]
-            };
-
-            var ctx = $("#myChart").get(0).getContext("2d");
-
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: chartdata,
-                options: {
-                    title: {
-                        display: false,
-                        maintainAspectRatio: false
-                    },
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    legend: {
-                        display: false,
-                    },
-                    scales: {
-                        
-                        borderColor: 'black',
-                        yAxes: [{
-                            gridLines: {
-                                drawOnChartArea: true,
-                                color: "black",
-                            },
-                            display: true,
-                            ticks: { 
-                                fontSize: 16,
-                                fontColor: 'black',
-                                min: 0,
-                                max: 6,
-                            },
-                            scaleLabel: {
-                                display: true,
-                                fontSize: 20,
-                                fontColor: 'black',
-                                labelString: 'Times Searched'
-                            }
-                        }],
-                        
-                        xAxes: [{
-                            
-                            gridLines: {
-                                drawOnChartArea: false,
-                                zeroLineColor: "black",
-                                color: "black",
-                            },
-                            display: true,
-                            ticks: { 
-                                fontSize: 20,
-                                fontColor: 'black',
-                            }
-                        }]
-                    }
+    function createChart() {
+        $.ajax({
+            url: "data.php",
+            type: "POST",
+            success: function (data) {
+                var average_star_rating = [];
+                var title = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
+                // var count = 1;
+                for (var i in data) {
+                    average_star_rating.push("" + data[i].average_star_rating);
+                    // title.push(data[i].title);
+                    // var num = count++;
+                    // title.push(num);
                 }
-            });
+
+                
+
+                if (!window.chart) {
+
+                    var chartdata = {
+                        labels: title,
+                        datasets: [
+                            {
+                                label: "Stars",
+                                fill: false,
+                                backgroundColor: chartColors.deep_Purple,
+                                borderColor: chartColors.light_purple,
+                                pointHoverBackgroundColor: chartColors.deep_Purple,
+                                hoverBackgroundColor: [
+                                    'rgb(255,215,0)',
+                                    'rgb(233,232,225)',
+                                    'rgb(205,127,50)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                    'rgb(123, 207, 233)',
+                                ],
+                                borderWidth: 1,
+                                data: average_star_rating
+                            }
+                        ]
+                    };
+
+                    var ctx = $("#myChart").get(0).getContext("2d");
+
+                    window.chart = new Chart(ctx, {
+                        animation: false,
+                        type: 'bar',
+                        data: chartdata,
+                        animationEnabled: false,
+                        options: {
+                            title: {
+                                display: false,
+                                maintainAspectRatio: false
+                            },
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            legend: {
+                                display: false,
+                            },
+                            scales: {
+
+                                borderColor: 'black',
+                                yAxes: [{
+                                    gridLines: {
+                                        drawOnChartArea: true,
+                                        color: "black",
+                                    },
+                                    display: true,
+                                    ticks: {
+                                        fontSize: 16,
+                                        fontColor: 'black',
+                                        min: 0,
+                                        max: 6,
+                                    },
+                                    scaleLabel: {
+                                        display: true,
+                                        fontSize: 20,
+                                        fontColor: 'black',
+                                        labelString: 'Times Searched'
+                                    }
+                                }],
+
+                                xAxes: [{
+
+                                    gridLines: {
+                                        drawOnChartArea: false,
+                                        zeroLineColor: "black",
+                                        color: "black",
+                                    },
+                                    display: true,
+                                    ticks: {
+                                        fontSize: 20,
+                                        fontColor: 'black',
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                } else {
+                    window.chart.data.datasets[0].data = average_star_rating;
+                    window.chart.update();
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
+    $(document).ready(function () {
+        createChart();
+        setInterval(function () {
+            createChart();
         },
-        error: function (data) {
-            console.log(data);
-        }
+            5000);
+
     });
-  
-});
+}
 
 window.chartColors = {
     red: 'rgb(255, 99, 132)',
