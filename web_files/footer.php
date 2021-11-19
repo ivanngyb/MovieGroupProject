@@ -1,5 +1,12 @@
 <?php
 $curpage = $_SERVER['REQUEST_URI'];
+if (!isset($_SESSION['username'])) {
+    $admin_on = "hidden";
+    $admin_off = "";
+} else {
+    $admin_on = "";
+    $admin_off = "hidden";
+}
 
 if ($curpage == 'admin.php' && !isset($_SESSION['username'])) {
     header('Location: index.php');
@@ -8,8 +15,11 @@ if ($curpage == 'admin.php' && !isset($_SESSION['username'])) {
 
 
 <footer class="footer m-0">
-    <div class="">
+    <div class="" <?php echo $admin_off?>>
         <p class="text-center text-primary py-1 bg-light">Designed by <a class="text-decoration-none" href="#" data-toggle="modal" data-target="#loginModal">ICA Design</a></p>
+    </div>
+    <div class="" <?php echo $admin_on?>>
+        <p class="text-center text-primary py-1 bg-light">Designed by ICA Design</p>
     </div>
 </footer>
 
