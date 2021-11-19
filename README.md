@@ -8,3 +8,5 @@ A group project we are doing for TAFE.
 * Caspian's repository: https://github.com/cjmaclean/MovieGroupProject and branch sprint-1: https://github.com/cjmaclean/MovieGroupProject/tree/sprint-1 
 * Andrew's repository: https://github.com/AWilliamson88/MovieGroupProject and branch sprint-2: https://github.com/AWilliamson88/MovieGroupProject/tree/sprint-2
 * Ivan's repository: https://github.com/ivanngyb/MovieGroupProject and branch sprint-3: https://github.com/ivanngyb/MovieGroupProject/tree/sprint-3
+
+As well as the repositories, we used GitHub's project Kanban boards for managing tasks
