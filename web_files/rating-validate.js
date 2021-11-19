@@ -17,21 +17,45 @@
   })
   jQuery(document).ready(function ($) {
     console.log("Ready function call");
-    
+
     $('input[type=radio]').on('change', function () {
       $(this).closest("form").on('submit', function (event) {
+        event.preventDefault();
+        var dataGet = $(this).closest("form").serializeArray();
+        $("#afterRating" + dataGet[0].value).text("Thanks for rating!");
+            
         $.ajax({
           type: "get",
           url: "add_rating_script.php",
-          data: $(this).closest("form").serialize(),
-          success: function (data) {
-            console.log("Rating added: " + data)
+          data: dataGet,
+          success: function () {
+            console.log(dataGet[0].value);
+            var c = document.getElementById("ratingDiv" + dataGet[0].value).children;
+            for(var i = 0; i < c.length; i++) {
+              c[i].style.display = "none";
+              setTimeout(function() { 
+                $.ajax({
+                  type: "post",
+                  url: "get_star_update.php",
+                  data: {'id' : dataGet[0].value},
+                  dataType: "text",
+                  success: function(data) {
+                    $(".star" + dataGet[0].value).text("Average Star Rating: " + data);
+                    
+                    console.log(data);
+                  },
+                  error: function(error) {
+                    console.log("Error: " + error);
+                  }
+                })
+              }, 100);
+             }
           }
         })
-        event.preventDefault();
+        
+        
       });
       $(this).closest("form").submit();
-      $(this).closest("fieldset").prop('disabled', true);
       $(this).closest("form").unbind('submit');
     });
   });
