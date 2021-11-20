@@ -1,5 +1,5 @@
 <?php
-include "connection_script.php";
+require "connection_script.php";
 
 $username = $_POST["uname"];
 $password = $_POST["pword"];

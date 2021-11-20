@@ -12,7 +12,7 @@
         Sprint: Two
 */
 
-include "connection_script.php";
+require "connection_script.php";
 $conn = null;
 
 if (!isset($_SESSION['username'])) {
@@ -46,21 +46,21 @@ if (!isset($_SESSION['username'])) {
         </header>
         <div class = "text-center">
         <?php
-            if (!isset($_SESSION['username'])) {
-                // shouldn't reach here due to header("Location: index.php");
-                echo "<br/>not logged in<br/>";
+        if (!isset($_SESSION['username'])) {
+            // shouldn't reach here due to header("Location: index.php");
+            echo "<br/>not logged in<br/>";
+            $non_admin_hidden = "hidden";
+        }
+        else {
+            echo "logged in as: " . $_SESSION['username'];
+            if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
+                echo " (personnel)<br/>";
                 $non_admin_hidden = "hidden";
+            } else {
+                echo " (admin)<br/>";
+                $non_admin_hidden = "";
             }
-            else {
-                echo "logged in as: " . $_SESSION['username'];
-                if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
-                    echo " (personnel)<br/>";
-                    $non_admin_hidden = "hidden";
-                } else {
-                    echo " (admin)<br/>";
-                    $non_admin_hidden = "";
-                }
-            }
+        }
         ?>
         </div>
         
@@ -111,9 +111,9 @@ if (!isset($_SESSION['username'])) {
                             Add personnel member
                         </button>
                         <?php
-                            if (isset($_GET['submit']) && $_GET['submit'] == "add_personnel" ) {
-                            require "admin_add_personnel_script.php";
-                            }
+                        if (isset($_GET['submit']) && $_GET['submit'] == "add_personnel" ) {
+                            include "admin_add_personnel_script.php";
+                        }
                         ?>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ if (!isset($_SESSION['username'])) {
                             </button>
                             <?php
                             if (isset($_GET['submit']) && $_GET['submit'] == "unsubscribe" ) {
-                                require "admin_member_unsubscribe_script.php";
+                                include "admin_member_unsubscribe_script.php";
                             }
                             ?>
                         </div>
@@ -158,8 +158,8 @@ if (!isset($_SESSION['username'])) {
             </form>
             <!-- If the show members form was submitted include the members table. -->
             <?php 
-                if (isset($_GET['show'])) {
-                    echo "
+            if (isset($_GET['show'])) {
+                echo "
                     <div class='row justify-content-center g-0'>
                         <div class='col-12 col-sm-12 col-md-10 col-xl-6'>
                             <table class='table'>
@@ -171,13 +171,13 @@ if (!isset($_SESSION['username'])) {
                                     <th $non_admin_hidden>Unsubscribe</th>
                                 </tr>
                     ";
-                    require 'admin_member_list_script.php';
-                    echo '
+                include 'admin_member_list_script.php';
+                echo '
                             </table> 
                         </div>
                     </div>  
                     ';
-                }
+            }
             ?>
             <div class="container-fluid text-center mt-3">
                 <h2>Log out</h2>

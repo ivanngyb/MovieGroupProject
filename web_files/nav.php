@@ -16,7 +16,7 @@
 ?>
 
 <?php
-include "connection_script.php";
+require "connection_script.php";
 if (!isset($_SESSION['username'])) {
     // shouldn't reach here due to header("Location: index.php");
     //echo "<br/>not logged in<br/>";

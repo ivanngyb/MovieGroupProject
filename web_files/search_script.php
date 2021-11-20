@@ -103,9 +103,9 @@ require "connection_script.php";
                 </div>
             <!-- If the search form was submitted include the results table. -->
                 <?php 
-                    if (isset($_POST['submit'])) {
-                        include 'search_results.php';
-                    }
+                if (isset($_POST['submit'])) {
+                    include 'search_results.php';
+                }
                 ?>
 
                 

@@ -12,7 +12,7 @@
 if (! array_key_exists('stars', $_GET) || !array_key_exists('id', $_GET)) {
     echo "<!-- Missing parameter -->";
 } else {
-    require "connection_script.php";
+    include "connection_script.php";
     $id = $_GET['id'];
     $stars_to_add = $_GET['stars'];
 
@@ -29,7 +29,7 @@ if (! array_key_exists('stars', $_GET) || !array_key_exists('id', $_GET)) {
         '
     );
 
-//        average_star_rating = (number_of_star_ratings + 1) / (total_stars + :stars_to_add)
+    //        average_star_rating = (number_of_star_ratings + 1) / (total_stars + :stars_to_add)
 
 
     $stmt->bindParam(':id', $id);

@@ -22,8 +22,7 @@ require "connection_script.php";
 
 $sql_condition = '1';
 
-if (
-    array_key_exists('title', $_POST) && array_key_exists('genre', $_POST)
+if (array_key_exists('title', $_POST) && array_key_exists('genre', $_POST)
     && array_key_exists('rating', $_POST) && array_key_exists('movie_year', $_POST)
 ) {
     $title = $_POST["title"];
@@ -100,7 +99,7 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     $version = $row["versions"];
     $price = $row["recommended_retail_price"];
     $ratio = $row["aspect"];
-	$genre = $row["genre"];
+    $genre = $row["genre"];
 
     if ($row["average_star_rating"] == '') {
         $star = 0.0;

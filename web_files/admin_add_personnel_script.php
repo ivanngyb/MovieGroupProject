@@ -13,13 +13,12 @@
 // Do not check for validity, as we'll want to be able to remove/unsubscribe any
 // addresses that are in the database, valid or not. The program will still warn
 // if the address was not in the database.
-if (
-        ! array_key_exists('username', $_GET) ||
-        ! array_key_exists('password', $_GET)
-    ) {
+if (! array_key_exists('username', $_GET) 
+    || ! array_key_exists('password', $_GET)
+) {
     echo "<br/>missing parameter<br/>";
 } else {
-    require "connection_script.php";
+    include "connection_script.php";
 
     if (!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
         echo "Not allowed";
@@ -53,11 +52,10 @@ if (
     } else if (strlen($raw_password) < 8) {
         $password_error = 1;
         $password_error_message = "password too short - needs at least 8 characters";
-    } else if (
-        !preg_match("/[0-9]/",$raw_password)
-        || !preg_match("/[a-z]/",$raw_password)
-        || !preg_match("/[A-Z]/",$raw_password)
-        ) {
+    } else if (!preg_match("/[0-9]/", $raw_password)
+        || !preg_match("/[a-z]/", $raw_password)
+        || !preg_match("/[A-Z]/", $raw_password)
+    ) {
             $password_error = 1;
             $password_error_message = "password needs uppercase, " . 
                 "lowercase and numbers, or to be 16 character long";
