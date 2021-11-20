@@ -85,7 +85,7 @@ if (!variableName) {
                                         display: true,
                                         fontSize: 20,
                                         fontColor: 'black',
-                                        labelString: 'Times Searched'
+                                        labelString: 'Star Rating'
                                     }
                                 }],
 
@@ -118,6 +118,7 @@ if (!variableName) {
     $(document).ready(function () {
         createChart();
         setInterval(function () {
+            $("#top-ten-table").load("top_ten_script.php");
             createChart();
         },
             5000);

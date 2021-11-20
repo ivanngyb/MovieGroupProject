@@ -49,7 +49,9 @@ $stmt->execute();
 $place = array("1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th");
 $i = 0;
 
-    echo "
+echo "<table class='table'>";
+
+echo "
         <tr>
             <th>Rank</th>
             <th>Title</th>
@@ -70,12 +72,13 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             <td>" . $place[$i] . "</td>
             <td><a href='movie_details.php?id=$id'>$title</a></td>
             <td>$rating</td>
-            <td>$number_of_ratings</td>
-            <td class='large-only'>$search_count</td>
+            <td class='large-only'>$number_of_ratings</td>
+            <td>$search_count</td>
         </tr>
     ";
     $i++;
 }
 
+echo "</table>";
+
 $conn = null;
-?>
