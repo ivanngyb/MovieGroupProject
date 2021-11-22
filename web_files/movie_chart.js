@@ -82,7 +82,7 @@ if (!variableName) {
                                                 fontSize: 16,
                                                 fontColor: 'black',
                                                 min: 0,
-                                                max: 6,
+                                                max: 5,
                                             },
                                             scaleLabel: {
                                                 display: true,
