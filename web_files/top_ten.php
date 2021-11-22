@@ -44,7 +44,7 @@
 
         <!-- The top 10 chart made with chart.js -->
         <div class="chart-container" style="position: relative; height: 50vh;">
-            <canvas id="myChart"></canvas>
+            <canvas id="myChart" aria-label="top 10 chart"></canvas>
         </div>
 
         <!-- Top 10 Table -->
