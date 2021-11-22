@@ -41,7 +41,7 @@ if ($curpage == 'admin.php' && !isset($_SESSION['username'])) {
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter last name" name="pword" required>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="pword" required>
                     </div>
                     <button type="submit" class="btn btn-outline-secondary btn-lg border my-5">Login</button>
                 </form>
