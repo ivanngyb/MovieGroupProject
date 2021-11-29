@@ -1,6 +1,7 @@
 # A web app for a movie rental place - a group project we are doing for TAFE.
+by Caspian, Andrew and Ivan
 
-* sprint-1 branch is the one I (Caspian) was managing, incorporating the code from the others: https://github.com/cjmaclean/MovieGroupProject/tree/sprint-1 
+* sprint-1 branch is the one Caspian was managing, incorporating the code from the others: https://github.com/cjmaclean/MovieGroupProject/tree/sprint-1 
 * sprint-2 branch was managed by Andrew (including code I wrote) in his repository: https://github.com/AWilliamson88/MovieGroupProject/tree/sprint-2
 * sprint-3 branch was managed by Ivan (including code I wrote) in his repository: https://github.com/ivanngyb/MovieGroupProject/tree/sprint-3
 * after the sprint-3 branch, we finalised the project in the main branch on Ivan's repository: https://github.com/ivanngyb/MovieGroupProject
