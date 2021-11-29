@@ -25,6 +25,7 @@
         <!-- Regular CSS -->
         <link rel="stylesheet" href="style.css">
         
+        
         <title>
             Search movies
         </title>
@@ -38,13 +39,15 @@
         </header>
         <main>
             <!-- The Search Form and Table -->
-            <form class="m-0 row" method="post" action="">
+            <form class="m-0 row" method="post" action="#results">
                 <?php
                 require "search_script.php";
                 ?>
             </form>
         </main>
-        <!-- Optional JavaScript : Just in case we need it -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="jquery-3.6.0.js"></script>
+        <script src="https://kit.fontawesome.com/a9337559c2.js" crossorigin="anonymous"></script>
+        <script src="rating-validate.js" async></script>
+        
     </body>
 </html>
