@@ -1,6 +1,8 @@
 # A web app for a movie rental place - a group project we are doing for TAFE.
 by Caspian, Andrew and Ivan
 
+Deployed onto [Heroku](https://acme-entertainment-portfolio.herokuapp.com/index.php)
+
 * sprint-1 branch is the one Caspian was managing:  
     * https://github.com/cjmaclean/MovieGroupProject/tree/sprint-1 
 * sprint-2 branch was managed by Andrew in his repository:  
